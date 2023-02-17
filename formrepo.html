@@ -1,0 +1,49 @@
+<html><title>Forms</title>
+<head><h3> We are gonna build some forms</h3></head>
+<body>
+    <h3><u>Forms</u></h3>
+
+    <form method="post" name="firstform" id="firstformid">
+        Email=<input type="text" id="emailid" maxlength="10" typeindex="1"><br>
+        Username=<input type="text" id="usernameid" maxlength="10" ><br>
+        password=<input type="password" name="password" id="passwordid" maxlength="10"><br><br><br>
+
+        <input type="checkbox" name="checkbox1" id="checkbox1id" value="html" typeindex="2">
+        <label for="checkbox1id">html</label><br>
+        <input type="checkbox" name="checkbox2" id="checkbox2id" value="CSS">
+        <label for="checkbox2id">CSS</label><br>
+        <input type="checkbox" name="checkbox3" id="checkbox3id" value="Javascript">
+        <label for="checkbox3id">Javascript</label>
+        <br> 
+        <br>
+        <br>
+        <input type="radio" name="courses" id="courses1" value="CPAN134">
+        <label for="courses1">CPAN134</label><br> 
+        <input type="radio" name="courses" id="courses2" value="CPAN133">
+        <label for="courses2">CPAN133</label><br> 
+        
+        <br>
+
+        <select id="mycourses">
+          <option value="CPAN134">CPAN134</option>
+          <option value="CPAN135">CPAN135</option>
+          <option value="CPAN136">CPAN136</option>
+        </select>
+
+
+        <input type="hidden" value="20" name="hiddenelement">
+
+        <br><br>Comments<br>
+        <textarea name="comments" rows="3" cols="20" ></textarea><br>
+        
+        <input type="submit" id="myButton" name="myButton" value="submit">
+        <input type="reset" id="myResetButton" name="myResetButton" value="Reset">
+        <button type="button" id="buttonid">Sign Up</button>
+
+        
+        <br><br>
+        <label for="spinner">Choose between 10 and 20</label>
+        <input type="number" name="spinner" id="mySpinner" min="10" max="20">
+    </form>
+</body>
+</html>
