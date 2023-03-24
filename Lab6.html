@@ -1,0 +1,55 @@
+<htmL>
+    <head><h2>Lab 6</h2></head>
+    <body>
+        <form>
+
+           First Name <input type="text" id="firstId" required>
+           <span id="firstSpan">*</span> <br>
+           Last Name <input type="text" id="lastId" required> 
+           <span id="lastSpan">*</span> <br>
+           Mark1 <input type="text" id="mark1" required> 
+           <span id="mark1Span">*</span> <br>
+           Mark 2 <input type="text" id="mark2" required> 
+           <span id="mark2Span">*</span> <br>
+           Mark 3 <input type="text" id="mark3" required> 
+           <span id="mark3Span">*</span> <br>
+           
+        </form>
+
+        
+        <button onclick = "" id="validateBtn">Validate</button> <br> <br>
+        <button onclick="printResult()" id="printBtn">Print Result</button> <br>
+
+        <p id="result"></p> <br>
+
+        <script>
+           
+        function printResult() {
+  
+            var firstName = document.getElementById("firstId").value;
+            var lastName = document.getElementById("lastId").value;
+            var mark1 = document.getElementById("mark1").value;
+            var mark2 = document.getElementById("mark2").value;
+            var mark3 = document.getElementById("mark3").value;
+
+  
+            var average = (mark1 + mark2 + mark3) / 3;
+
+            var grade;
+            if (average >= 90) {
+            grade = "Awesome";
+            } else if (average >= 80) {
+            grade = "Very Good";
+            } else if (average >= 50) {
+            grade = "OK";
+            } else {
+            grade = "Fail";
+            }
+
+           document.getElementById("result").innerHTML = `${firstName} ${lastName}'s grade is: ${grade}`;
+           }
+           
+        </script>
+
+    </body>
+</htmL>
