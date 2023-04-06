@@ -1,0 +1,119 @@
+<html>
+
+    <head><title>Assignment 2</title>
+        <style>
+            .background1 {
+                background-color: yellow;
+            }
+            .background2 {
+                background-color: green;
+            }
+            #para1 , #para2 {
+                 font-size: 15pt;
+                 font-weight: bold;
+            }
+        
+           
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <h2>Part 1</h2>
+        <form>
+            <label for="rent" ><strong>Room Rental:</strong> </label><input type="text" id="rnt"><br>
+            <label for="food" ><strong>Food:</strong><label><input type="text" id="fd"><br>
+            <label for="ent" ><strong>Entertainment:</strong></label><input type="text" id="ent"><br>
+            <label for="tol" ><strong>Total:</strong></label><input type="text" id="tol" readonly><br>
+            <label for="tax" ><strong>With Tax:</strong></label><input type="text" id="tx" readonly><br>
+        </form>
+
+        <script>
+             var rent =document.getElementById('rnt');
+             var food = document.getElementById('fd');
+             var entertainment = document.getElementById('ent');
+             var total = document.getElementById('tol');
+             var tax = document.getElementById('tx');
+
+             function calculate(){
+                var rnt = Number(rent.value);
+                var fd = Number(food.value);
+                var ent = Number(entertainment.value);
+                var tol = rnt + fd + ent ;
+                var tx = (tol * 0.13) + tol;
+
+                total.value = tol.toFixed(2);
+                tax.value = tx.toFixed(2);
+             }
+             
+                rnt.addEventListener('input', calculate);
+                food.addEventListener('input', calculate);
+                entertainment.addEventListener('input', calculate);
+
+        </script>
+
+        </div>
+        <br>
+        
+    <div>
+        <h2> Part 2</h2>
+        <h3>Country:</h3>
+        <dl>
+            <dt>CANADA</dt>
+        </dl>
+        <h3>Capital:</h3>
+        <dl>
+            <dt id="ottawa">OTTAWA</dt>
+        </dl>
+
+        <button id="hideName">Hide Capital Name</button><br><br>
+        <button id="showName">Show Capital Name</button><br><br>
+        <button id="toggle">Toggle</button>
+        
+        <p id="para1">Hover on this paragraph for Yellow</p>
+        <p id="para2">Click on this paragraph for Green example</p>
+
+        <script>
+       
+        var capitalCity = document.getElementById('ottawa');
+        var firstPara = document.getElementById('para1');
+        var secondPara = document.getElementById('para2');
+
+
+        document.getElementById('hideName').addEventListener('click', function() { 
+            capitalCity.style.display = 'none';
+        } );
+
+
+        document.getElementById('showName').addEventListener('click', function(){
+            capitalCity.style.display = 'inline';
+        });
+
+
+        document.getElementById('toggle').addEventListener('click', function(){
+            if (capitalCity.style.display =='none') {
+               (capitalCity.style.display = 'inline');
+            }
+            else {capitalCity.style.display = 'none'; }
+        });
+
+
+        firstPara.addEventListener('mouseover', function(){
+            firstPara.classList.add('background1');
+        });
+
+
+        firstPara.addEventListener('mouseout', function(){
+            firstPara.classList.remove('background1');
+        });
+
+
+        secondPara.addEventListener('click', function(){
+            secondPara.classList.add('background2');
+        });
+
+        </script>
+    </div>        
+    
+    </body>
+</html>
